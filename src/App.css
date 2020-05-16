@@ -1,19 +1,119 @@
+
 .App {
   text-align: center;
-  color: whitesmoke;
-  
-  background-blend-mode: unset;
-  
+  color: whitesmoke; 
 }
 
 html, body {
-  background-color: #2c335e;
+  background-color: #13162b;
+}
+
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 6rem;
+}
+
+label.showMe {
+  margin-bottom: 10px;
+  padding: 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+hr {
+  border-style: solid;
+  border-width: .5px;
+  color: #d1d1d1;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.formContainer {
+  display: inline-block;
+}
+
+input {
+    border: 0.1rem solid #d1d1d1;
+    border-radius: .4rem;
+    box-shadow: none;
+    box-sizing: inherit;
+    height: 3.8rem;
+    padding: .6rem 1.0rem;
+    width: 200px;
+    background-color: #13162b;
+    color: #d1d1d1;
+    margin: 5px;
+}
+
+.select {
+  width: 200px;
+  color: rgb(100, 114, 128);
+  margin: 5px;
+}
+
+label {
+  text-align: end;
 }
 
 ul {
   list-style-type: none;
 }
 
+li {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+li .COWrapper  {
+  border: 0.1rem solid #d1d1d1;
+  border-radius: .4rem;
+  width: 100%;
+  min-width: 400px;
+  color: #d1d1d1;
+}
+
+.COStats p {
+  display: inline;
+  padding: 20px;
+   
+}
+
+.COStats p {
+  font-size: 2rem;
+  padding: 5rem;
+  font-weight: 600;
+}
+
 img {
   max-width: 400px;
+  max-height: 300px;
 }
+
+button {
+  margin: 5px;
+}
+
+button:hover {
+  background-image: linear-gradient(to bottom right, #13162b, #a7a7a8, #13162b);
+}
+
+.buttons button {
+  display: inline;
+  box-shadow: none;
+  box-sizing: inherit;
+  color: whitesmoke;
+}
+
+.buttons {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+

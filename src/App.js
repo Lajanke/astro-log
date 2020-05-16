@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import AstroList from './Components/AstroList.js';
-import AddCO from './Components/AddCO';
+import AddCO from './Components/AddCO.js';
+import Header from './Components/Header.js'
 
 class App extends React.Component {
   state = {
@@ -20,8 +21,11 @@ class App extends React.Component {
         imaged: false,
         imageURL: 'https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22946-16.jpg',
       },
-    ]
+    ],
+    listType: 'celestial objects'
   }
+
+  
 
   addCOToState = (newCO) => {
     this.setState((currentState) => {
@@ -32,25 +36,31 @@ class App extends React.Component {
   }
 
   updateCelestialObject = (celestialObject) => {
-      this.setState((currentState) => {
-        return {
-          celestialObjects: currentState.celestialObjects.map((co) => co.name === celestialObject.name ? celestialObject : co),
-        };
-      });
+    this.setState((currentState) => {
+      return {
+        celestialObjects: currentState.celestialObjects.map((co) => co.name === celestialObject.name ? celestialObject : co),
+      };
+    });
+  }
+
+  deleteCO = (name) => {
+    this.setState((currentState) => {
+      return {
+          celestialObjects: currentState.celestialObjects.filter((co) => co.name !== name),
+      };
+    });
   }
 
   render() {
     return (
       <div className='App'>
-        <header>
-          <h1>ASTRO-LOG</h1>
-          <h2>Have you seen it?</h2>
-        </header>
-        <AddCO addCOToState={this.addCOToState}/>
-        <AstroList 
+        <Header listType={this.state.listType} />
+        <AddCO addCOToState={this.addCOToState} />
+        <AstroList
           celestialObjects={this.state.celestialObjects}
           update={this.updateCelestialObject}
-          />
+          deleteCO={this.deleteCO}
+        />
       </div>
     )
   }
