@@ -16,7 +16,7 @@ class App extends React.Component {
       },
       {
         name: 'Jupiter',
-        category: 'Solar system',
+        category: 'Planet',
         seen: false,
         imaged: false,
         imageURL: 'https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22946-16.jpg',
@@ -25,7 +25,7 @@ class App extends React.Component {
     listType: 'celestial objects'
   }
 
-  
+
 
   addCOToState = (newCO) => {
     this.setState((currentState) => {
@@ -46,24 +46,46 @@ class App extends React.Component {
   deleteCO = (name) => {
     this.setState((currentState) => {
       return {
-          celestialObjects: currentState.celestialObjects.filter((co) => co.name !== name),
+        celestialObjects: currentState.celestialObjects.filter((co) => co.name !== name),
       };
     });
+  }
+
+  handleFilter = (event) => {
+    if (event.target.value !== 'select') {
+      console.log('in if')
+      this.setState({ listType: event.target.value })
+    }
   }
 
   render() {
     return (
       <div className='App'>
         <Header listType={this.state.listType} />
+        <label className='showMe'>Show me:
+            <select className='select' name='filter' onChange={this.handleFilter} value={this.state.listType}>
+            <option value='celestial objects'>All</option>
+            <option value='Galaxy'>Galaxies</option>
+            <option value='Lunar'>Lunar</option>
+            <option value='Nebula'>Nebulae</option>
+            <option value='Planet'>Planets</option>
+          </select>
+        </label>
+        <hr />
+        <h2>
+          My {this.state.listType} observing list
+      </h2>
         <AddCO addCOToState={this.addCOToState} />
         <AstroList
           celestialObjects={this.state.celestialObjects}
           update={this.updateCelestialObject}
           deleteCO={this.deleteCO}
+          handleFilter={this.handleFilter}
+          listType={this.state.listType}
         />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default App;

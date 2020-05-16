@@ -10,14 +10,16 @@ function AstroList(props) {
         props.update({ ...celestialObject, imaged: !celestialObject.imaged });
     }
 
+    let filteredCO = props.listType === 'celestial objects' ? props.celestialObjects : props.celestialObjects.filter((co) => co.category === props.listType);
+
     return (
         <ul className='COList'>
-            {props.celestialObjects.map((obj) => {
+            {filteredCO.map((obj) => {
                 return (
                     <li key={obj.name}>
                         <div className='COWrapper'>
                             <div className='COStats'>
-                                <p>{obj.name}  {obj.seen ? '☑️  Observed ' : null }  {obj.imaged ? '☑️  Imaged ' : null}</p>
+                                <p>{obj.name}  {obj.seen ? '☑️  Observed ' : null}  {obj.imaged ? '☑️  Imaged ' : null}</p>
                             </div>
                             <div className='buttons'>
                                 <button onClick={() => seen(obj)}>{obj.seen ? 'Unsee' : 'Seen it!'}</button>

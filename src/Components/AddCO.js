@@ -3,7 +3,7 @@ import React from 'react';
 class AddCO extends React.Component {
     state = {
         name: '',
-        category: '',
+        category: 'Galaxy',
         seen: false,
         imaged: false,
         imageURL: '',
@@ -34,7 +34,7 @@ class AddCO extends React.Component {
                     </label>
                     <label>Category:
                     <select className='select' name='category' onChange={this.handleInputChange} value={this.state.category}>
-                            <option className='selectBoxText' value='None'>Select</option>
+
                             <option value='Galaxy'>Galaxy</option>
                             <option value='Lunar'>Lunar</option>
                             <option value='Nebula'>Nebula</option>
@@ -52,5 +52,3 @@ class AddCO extends React.Component {
 }
 
 export default AddCO;
-
-//<input list='Categories' name='category' onChange={this.handleInputChange} value={this.state.category}/>
