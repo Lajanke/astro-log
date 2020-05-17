@@ -7,7 +7,7 @@ function AstroList(props) {
     }
 
     const imaged = (celestialObject) => {
-        if (celestialObject.imageURL === '') {
+        if (celestialObject.imageURL === '' && celestialObject.imaged === false) {
             const imageLink = prompt('Add image URL')
             if (imageLink === '') {
                 props.update({ ...celestialObject, imaged: !celestialObject.imaged })

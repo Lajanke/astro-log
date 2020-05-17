@@ -11,19 +11,18 @@ class AddCO extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state)
         if (this.state.name !== '' && this.state.category !== '') {
-            this.props.addCOToState(this.state)
+            this.props.addCOToState(this.state);
             this.setState({
-                name: '', category: 'Galaxy'
-            })
+                name: '', category: 'Galaxy',
+            });
         }
-    }
+    };
 
     handleInputChange = (event) => {
-        const { name, value } = event.target
+        const { name, value } = event.target;
         this.setState({ [name]: value });
-    }
+    };
 
     render() {
         return (

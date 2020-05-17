@@ -54,12 +54,16 @@ class App extends React.Component {
   }
 
   addCOToState = (newCO) => {
-    this.setState((currentState) => {
-      return {
-        celestialObjects: [newCO, ...currentState.celestialObjects]
-      }
-    })
-  }
+    if (this.state.celestialObjects.some((co) => co.name === newCO.name)) {
+      alert('Please use a unique name');
+    } else {
+      this.setState((currentState) => {
+        return {
+         celestialObjects: [newCO, ...currentState.celestialObjects],
+       }   
+     });
+    }
+  };
 
   updateCelestialObject = (celestialObject) => {
     this.setState((currentState) => {
