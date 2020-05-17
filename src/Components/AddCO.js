@@ -15,7 +15,7 @@ class AddCO extends React.Component {
         if (this.state.name !== '' && this.state.category !== '') {
             this.props.addCOToState(this.state)
             this.setState({
-                name: '', category: ''
+                name: '', category: 'Galaxy'
             })
         }
     }

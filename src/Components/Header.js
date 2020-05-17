@@ -5,8 +5,6 @@ class Header extends React.Component {
         listType: 'Celestial Obj',
     };
 
-    
-
     render() {
         return (
             <header className="App-header">

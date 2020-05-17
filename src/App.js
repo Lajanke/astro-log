@@ -15,17 +15,43 @@ class App extends React.Component {
         imageURL: '//cdn.astrobin.com/thumbs/LJOE_pbKTxOl_1824x0_p5FBXZOa.jpg'
       },
       {
+        name: 'Triangulum',
+        category: 'Galaxy',
+        seen: false,
+        imaged: false,
+        imageURL: 'https://cdn.astrobin.com/thumbs/mWEfdqWSzfpW_1824x0_kWXURFLk.jpg'
+      },
+      {
+        name: 'Orion',
+        category: 'Nebula',
+        seen: false,
+        imaged: false,
+        imageURL: 'https://cdn.astrobin.com/thumbs/jN4Sm3cEjjMM_1824x0_u3kndVub.jpg'
+      },
+      {
+        name: 'Rosette',
+        category: 'Nebula',
+        seen: false,
+        imaged: false,
+        imageURL: 'https://cdn.astrobin.com/thumbs/N2dz8aPAB9jb_1824x0_p5FBXZOa.jpg'
+      },
+      {
         name: 'Jupiter',
         category: 'Planet',
         seen: false,
         imaged: false,
         imageURL: 'https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22946-16.jpg',
       },
+      {
+        name: 'Moon',
+        category: 'Lunar',
+        seen: false,
+        imaged: false,
+        imageURL: 'https://i.imgur.com/TaJpbTB.jpg',
+      }, 
     ],
     listType: 'celestial objects'
   }
-
-
 
   addCOToState = (newCO) => {
     this.setState((currentState) => {
@@ -59,6 +85,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('rendering')
     return (
       <div className='App'>
         <Header listType={this.state.listType} />
