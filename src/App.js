@@ -40,7 +40,7 @@ class App extends React.Component {
         category: 'Planet',
         seen: false,
         imaged: false,
-        imageURL: 'https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22946-16.jpg',
+        imageURL: '',
       },
       {
         name: 'Moon',

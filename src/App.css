@@ -11,11 +11,11 @@ html, body {
 h1 {
   margin-top: 1rem;
   margin-bottom: 0;
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 .telescope {
-  font-size: 4.5rem;
+  font-size: 4rem;
   color: transparent;
   text-shadow: 0 0 0 #9b4dca;
 }
@@ -31,12 +31,12 @@ hr {
   border-style: solid;
   border-width: .5px;
   color: #d1d1d1;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
 }
 
@@ -81,8 +81,9 @@ li {
 li .COWrapper  {
   border: 0.1rem solid #d1d1d1;
   border-radius: .4rem;
-  width: 100%;
-  min-width: 400px;
+  width: calc(100% - 20px);
+  margin: auto;
+  min-width: 300px;
   color: #d1d1d1;
 }
 
@@ -93,20 +94,21 @@ li .COWrapper  {
 }
 
 .COStats p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 5rem;
   font-weight: 600;
 }
 
 img {
+  width: 100%;
   max-width: 400px;
   max-height: 300px;
 }
 
 button {
   margin: 5px;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 1.7rem;
+  padding-left: 1.7rem;
 }
 
 button:hover {
@@ -125,5 +127,50 @@ button:hover {
   margin-bottom: 10px;
 }
 
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 6rem;
+  }
+  
+h2 {
+  font-size: 3rem;
+}
 
+  .telescope {
+    font-size: 4.5rem;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-self: center;
+    max-width: 950px;
+  }
+
+  li {
+    margin: 5px;
+    max-width: 475px;
+  }
+
+  .formContainer {
+    display: inline-flex;
+  }
+
+  label {
+    margin-left: 10px;
+  }
+
+  .addButton {
+    margin-left: 15px;;
+  }
+}
+
+@media (min-width: 1450px) {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: center;
+    max-width: 1500px;
+  }
+}
 
