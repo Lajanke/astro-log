@@ -90,12 +90,8 @@ li .COWrapper  {
 .COStats p {
   display: inline;
   padding: 20px;
-   
-}
-
-.COStats p {
   font-size: 1.8rem;
-  padding: 5rem;
+  padding: 1rem;
   font-weight: 600;
 }
 
